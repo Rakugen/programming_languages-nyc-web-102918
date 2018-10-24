@@ -1,16 +1,16 @@
 require "pry"
 def reformat_languages(languages)
   new_hash = {}
-#  style_array = []
+  style_array = []
 
   languages.each do |style, language| #:oo, :functional
-    style_array = []
+#    style_array = []
     language.each do |key, value| #:ruby, :javascript, :python, etc
 #      temp_type = value[0]
 #      new_hash[key] = {temp_type, :style => []}
       new_hash[key] = {:type => value[:type], :style => style_array}
       if !style_array.include?(style)
-        style_array << style
+        new_hash[key][:style] << style
       end
     end
   end
