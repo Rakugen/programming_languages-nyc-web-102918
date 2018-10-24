@@ -10,7 +10,7 @@ def reformat_languages(languages)
       new_hash[key] = {:type => value[:type], :style => []}
       if !(new_hash[key][:style].include?(style))
         new_hash[key][:style] << style
-      end
+      end#
       binding.pry
     end
   end
