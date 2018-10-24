@@ -6,11 +6,14 @@ def reformat_languages(languages)
   languages.each do |style, language| #:oo, :functional
 #    style_array = []
     language.each do |key, value| #:ruby, :javascript, :python, etc
-
-      new_hash[key] = {:type => value[:type], :style => []}
-      if !(new_hash[key][:style].include?(style))
+      if !new_hash.include?(key)
+        new_hash[key] = {:type => value[:type], :style => []}
         new_hash[key][:style] << style
-      end#
+
+      else
+        new_hash[key][:style] << style
+
+      end
       binding.pry
     end
   end
