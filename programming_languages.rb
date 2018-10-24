@@ -9,8 +9,9 @@ def reformat_languages(languages)
 #      temp_type = value[0]
 #      new_hash[key] = {temp_type, :style => []}
       new_hash[key] = {:type => value[:type], :style => style_array}
-#      new_hash[key][:style] << style
-      style_array << style
+      if !style_array.include?(style)
+        new_hash[key][:style] << style
+      end
     end
   end
   new_hash
