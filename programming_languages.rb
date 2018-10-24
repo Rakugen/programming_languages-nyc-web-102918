@@ -7,8 +7,8 @@ def reformat_languages(languages)
 #    style_array = []
     language.each do |key, value| #:ruby, :javascript, :python, etc
 
-      new_hash[key] = {:type => value[:type]}
-      if !style_array.include?(style)
+      new_hash[key] = {:type => value[:type], :style => []}
+      if !new_hash[key][:style].include?(style)
         new_hash[key][:style] << style
       end
     end
