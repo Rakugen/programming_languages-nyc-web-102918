@@ -7,8 +7,8 @@ def reformat_languages(languages)
 
     language.each do |key, value| #:ruby, :javascript, :python, etc
       temp_type = value[0]
-      new_hash[key] = {temp_type, :style => []}
-
+#      new_hash[key] = {temp_type, :style => []}
+      new_hash[key][:type] = temp_type
       new_hash[key][:style] << style
     end
   end
